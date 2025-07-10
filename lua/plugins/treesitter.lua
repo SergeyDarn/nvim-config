@@ -7,6 +7,8 @@ return {
 			"gowork",
 			"gosum",
 			"hurl",
+			"css",
+			"scss",
 		})
 	end,
 }
