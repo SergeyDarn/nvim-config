@@ -1,38 +1,28 @@
 return {
 	{
-		"nvim-lua/plenary.nvim",
-	},
-	{
 		"ThePrimeagen/harpoon",
-		keys = {
-			{
-				"<leader>hm",
-				function()
-					require("harpoon.mark").toggle_file()
-				end,
-				desc = "Harpoon toggle mark",
-			},
-			{
-				"<leader>hh",
-				function()
-					require("harpoon.ui").toggle_quick_menu()
-				end,
-				desc = "Harpoon view marks",
-			},
-			{
-				"<S-l>",
-				function()
-					require("harpoon.ui").nav_next()
-				end,
-				desc = "Harpoon next mark",
-			},
-			{
-				"<S-h>",
-				function()
-					require("harpoon.ui").nav_prev()
-				end,
-				desc = "Harpoon prev mark",
-			},
-		},
+		branch = "harpoon2",
+		dependencies = { "nvim-lua/plenary.nvim" },
+		config = function()
+			local harpoon = require("harpoon")
+
+			harpoon:setup()
+
+			vim.keymap.set("n", "<leader>hm", function()
+				harpoon:list():add()
+			end, { desc = "Harpoon add mark" })
+
+			vim.keymap.set("n", "<leader>hh", function()
+				harpoon.ui:toggle_quick_menu(harpoon:list())
+			end, { desc = "Harpoon view marks" })
+
+			vim.keymap.set("n", "<S-H>", function()
+				harpoon:list():prev()
+			end, { desc = "Harpoon prev mark" })
+
+			vim.keymap.set("n", "<S-L>", function()
+				harpoon:list():next()
+			end, { desc = "Harpoon next mark" })
+		end,
 	},
 }
