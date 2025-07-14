@@ -13,9 +13,9 @@ return {
 
 					local currentBuffer = vim.api.nvim_get_current_buf()
 					local mark = grapple.exists({ buffer = currentBuffer })
-					local message = "Mark added"
+					local message = "Grapple added"
 					if mark then
-						message = "Mark deleted"
+						message = "Grapple removed"
 					end
 
 					grapple.toggle()
