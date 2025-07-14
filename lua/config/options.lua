@@ -7,10 +7,3 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 vim.opt.list = false
-
-vim.api.nvim_create_autocmd({ "FileType" }, {
-	pattern = { "ts", "vue", "html", "js", "scss", "css" },
-	callback = function()
-		vim.b.autoformat = false
-	end,
-})
