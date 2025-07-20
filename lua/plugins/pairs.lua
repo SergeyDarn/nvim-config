@@ -4,8 +4,4 @@ return {
 		event = "InsertEnter",
 		opts = {},
 	},
-	{
-		"echasnovski/mini.pairs",
-		enabled = false,
-	},
 }
