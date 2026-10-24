@@ -34,12 +34,17 @@ return {
 					},
 				},
 			},
+			layout = {
+				preset = function()
+					return "default"
+				end,
+			},
 			layouts = {
 				default = {
 					layout = {
 						box = "horizontal",
 						width = 0.8,
-						min_width = 120,
+						min_width = 90,
 						height = 0.8,
 						{
 							box = "vertical",
