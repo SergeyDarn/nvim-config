@@ -13,18 +13,6 @@ return {
 			enabled = false,
 		},
 		picker = {
-			previewers = {
-				diff = {
-					builtin = false,
-					cmd = { "delta" },
-				},
-				git = {
-					builtin = false,
-					args = {
-						"delta",
-					},
-				},
-			},
 			sources = {
 				explorer = {
 					layout = {
