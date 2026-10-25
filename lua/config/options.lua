@@ -7,3 +7,17 @@ vim.o.shiftwidth = 4
 vim.o.expandtab = true
 
 vim.opt.list = false
+
+-- Set correct pwd when opening a directory
+vim.api.nvim_create_autocmd("VimEnter", {
+	pattern = "*",
+	callback = function()
+		local args = vim.fn.argv()
+		for _, arg in ipairs(type(args) == "table" and args or {}) do
+			if vim.fn.isdirectory(arg) == 1 then
+				vim.cmd.cd(arg)
+				break
+			end
+		end
+	end,
+})
